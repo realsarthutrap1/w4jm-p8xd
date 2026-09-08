@@ -11,10 +11,18 @@ double sumArray(double *arr, int size);
 int main() {
     double *arr = new double[SIZE];
 
+    enterArrayData(arr, SIZE);
+
     return 0;
 }
 
 void enterArrayData(double *arr, int size) {
+    cout << "Data entry for the array:" << endl;
+    for (int i = 0; i < size; i++) {
+        cout << "    > Element #" << i << ": ";
+        cin >> arr[i];
+    }
+    cout << "Data entry complete." << endl;
 }
 
 void outputArrayData(double *arr, int size) {
