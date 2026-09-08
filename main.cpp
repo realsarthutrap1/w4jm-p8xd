@@ -13,6 +13,7 @@ int main() {
 
     enterArrayData(arr, SIZE);
     outputArrayData(arr, SIZE);
+    sumArray(arr, SIZE);
 
     return 0;
 }
@@ -35,5 +36,10 @@ void outputArrayData(double *arr, int size) {
 }
 
 double sumArray(double *arr, int size) {
+    double total = 0;
+    for (int i = 0; i < size; i++) {
+        total += *(arr + i);
+    }
+    cout << "Sum of values: " << total << endl;
     return 0;
 }
