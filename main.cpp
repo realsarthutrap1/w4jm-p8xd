@@ -20,7 +20,7 @@ void enterArrayData(double *arr, int size) {
     cout << "Data entry for the array:" << endl;
     for (int i = 0; i < size; i++) {
         cout << "    > Element #" << i << ": ";
-        cin >> arr[i];
+        cin >> *(arr + i);
     }
     cout << "Data entry complete." << endl;
 }
