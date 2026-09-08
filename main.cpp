@@ -13,11 +13,18 @@ int main() {
 
     enterArrayData(arr, SIZE);
     outputArrayData(arr, SIZE);
-    sumArray(arr, SIZE);
+
+    cout << "Sum of values: " << sumArray(arr, SIZE) << endl;
+
+    delete[] arr;
+    arr = nullptr;
 
     return 0;
 }
 
+// enterArrayData() fills a dynamic array from console input
+// arguments: arr (pointer to doubles), size (number of elements)
+// returns: nothing
 void enterArrayData(double *arr, int size) {
     cout << "Data entry for the array:" << endl;
     for (int i = 0; i < size; i++) {
@@ -27,19 +34,27 @@ void enterArrayData(double *arr, int size) {
     cout << "Data entry complete." << endl;
 }
 
+// outputArrayData() prints all elements on one line
+// arguments: arr (pointer to doubles), size (number of elements)
+// returns: nothing
 void outputArrayData(double *arr, int size) {
     cout << "Outputting array elements: ";
     for (int i = 0; i < size; i++) {
-        cout << *(arr + i) << " ";
+        cout << *(arr + i);
+        if (i < size - 1) {
+            cout << " ";
+        }
     }
     cout << endl;
 }
 
+// sumArray() adds the elements and returns the total
+// arguments: arr (pointer to doubles), size (number of elements)
+// returns: sum of the array values
 double sumArray(double *arr, int size) {
     double total = 0;
     for (int i = 0; i < size; i++) {
         total += *(arr + i);
     }
-    cout << "Sum of values: " << total << endl;
-    return 0;
+    return total;
 }
